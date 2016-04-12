@@ -18,10 +18,11 @@ public class Space
 		// validate length
 		if(_grid.size() > 0 && values.length != _grid.get(0).size())
 		{
-			throw new IllegalArgumentException("Column should be " + _grid.get(0).size() + " values but " + values.length + " were passed in");
+			throw new IndexOutOfBoundsException("Column should be " + _grid.get(0).size() + " values but " + values.length + " were passed in");
 		}
 
 		List<Integer> column = new ArrayList<>(Arrays.asList(values));
+		_grid.add(column);
 	}
 
 	public List<Integer> getColumn(int column)
