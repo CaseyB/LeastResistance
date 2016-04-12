@@ -91,4 +91,27 @@ public class GridTest
 		assertTrue(path.completed());
 		assertEquals(11, path.getScore());
 	}
+
+	@Test
+	public void exampleThree ()
+	{
+//		19 10 19 10 19
+//		21 23 20 19 12
+//		20 12 20 11 10
+
+//		No
+//		48
+//		1 1 1
+
+		Space space = new Space();
+		space.addColumn(19, 21, 20);
+		space.addColumn(10, 23, 12);
+		space.addColumn(19, 20, 20);
+		space.addColumn(10, 19, 11);
+		space.addColumn(19, 12, 10);
+
+		Path path = GridRunner.findPath(space);
+		assertFalse(path.completed());
+		assertEquals(48, path.getScore());
+	}
 }
