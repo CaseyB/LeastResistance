@@ -13,6 +13,23 @@ public class Space
 		_grid = new ArrayList<>();
 	}
 
+	public int getWidth()
+	{
+		return _grid.size();
+	}
+
+	public int getHeight()
+	{
+		if(_grid.size() > 0)
+		{
+			return _grid.get(0).size();
+		}
+		else
+		{
+			return 0;
+		}
+	}
+
 	public void addColumn(Integer... values)
 	{
 		// validate length

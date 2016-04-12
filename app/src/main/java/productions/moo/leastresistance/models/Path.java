@@ -21,19 +21,15 @@ public class Path
 		return _score;
 	}
 
-	public void setScore (int score)
-	{
-		_score = score;
-	}
-
 	public List<Integer> getSteps ()
 	{
 		return _steps;
 	}
 
-	public void addStep (int step)
+	public void addStep (int row, int value)
 	{
-		_steps.add(step);
+		_steps.add(row);
+		_score += value;
 	}
 
 	public boolean completed ()
@@ -44,5 +40,14 @@ public class Path
 	public void setCompleted (boolean completed)
 	{
 		_completed = completed;
+	}
+
+	public Path clone()
+	{
+		Path clone = new Path();
+		clone._score = _score;
+		clone._completed = _completed;
+		clone._steps.addAll(_steps);
+		return clone;
 	}
 }
