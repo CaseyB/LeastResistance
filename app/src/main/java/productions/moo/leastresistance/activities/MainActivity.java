@@ -1,7 +1,9 @@
-package productions.moo.leastresistance;
+package productions.moo.leastresistance.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import productions.moo.leastresistance.R;
 
 public class MainActivity extends AppCompatActivity
 {
